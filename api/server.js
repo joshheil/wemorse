@@ -15,9 +15,8 @@ function start(incomingMessage) {
   message = morse.encode(message);
   wemo = new Wemo();
   wemo.load('***Your wemo device ip***', main); //typically http://192.168.0.155:49153/setup.xml
-  
 }
- 
+
 function main(deviceInfo) {
   client = wemo.client(deviceInfo);
 
@@ -27,6 +26,7 @@ function main(deviceInfo) {
 function dotOrDash(callback) {
   setTimeout(function () {
     if (i >= message.length) {
+      i = 0;
       return;
     }
 
